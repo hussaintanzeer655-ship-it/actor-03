@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Actor Portfolio 03</title>
+<style>html,body{margin:0} body{font-family:Arial, sans-serif;background:#0b0f14;color:#e5f0f7}
+.container{max-width:980px;margin:0 auto;padding:20px}
+.header{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #1f2a30}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.card{background:#141b22;border-radius:10px;padding:14px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center}
+.modal .box{background:#fff;color:#000;border-radius:8px;padding:20px;min-width:260px}
+button{cursor:pointer}
+@media (max-width:600px){ .grid{grid-template-columns:1fr} }
+</style></head>
+<body>
+<header class="header container"><div><strong>Actor Studio</strong></div><button id="open">Message</button></header>
+<main class="container">
+  <section class="grid" aria-label="Showcase">
+    <article class="card"><h3>Scenes</h3><p>Character studies and on-screen moments.</p></article>
+    <article class="card"><h3>Theatre</h3><p>Stage presence and voice work.</p></article>
+    <article class="card"><h3>Credits</h3><p>Award nominations and campaigns.</p></article>
+  </section>
+</main>
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="box">
+    <h4>Contact</h4><p>Reach out for inquiries.</p>
+    <button id="close">Close</button>
+  </div>
+</div>
+<script>
+(function(){
+  const m=document.getElementById('modal');
+  document.getElementById('open').addEventListener('click',()=>{ m.style.display='flex'; m.setAttribute('aria-hidden','false'); });
+  document.getElementById('close').addEventListener('click',()=>{ m.style.display='none'; m.setAttribute('aria-hidden','true'); });
+})();
+</script>
+</body>
+</html>
